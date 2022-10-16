@@ -1,4 +1,6 @@
 local icons = {
+  block_left_filled = '█',
+  block_right_filled = '█',
   rounded_left_filled = '',
   rounded_right_filled = '',
   arrow_left_filled = '', -- e0b2
@@ -21,7 +23,7 @@ local icons = {
   dotdotdot = '…',
   information = '',
   symlink = '',
-  line_number = '',
+  line_number = '',
   debug = ' ',
   flame = ' ',
   check = ' ',

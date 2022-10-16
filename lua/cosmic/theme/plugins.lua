@@ -20,11 +20,19 @@ function M.init(use, config)
     'folke/tokyonight.nvim',
     as = 'tokyonight',
     config = function()
-      vim.g.tokyonight_style = 'night'
-      vim.g.tokyonight_sidebars = { 'qf' }
-      vim.cmd('color tokyonight')
+      local tokyonight = require('tokyonight')
+      tokyonight.setup({
+        style = 'night',
+        --[[ transparent = true, ]]
+        sidebars = {},
+        styles = {
+          sidebars = 'transparent',
+          floats = 'transparent',
+        },
+      })
+      vim.cmd('colorscheme tokyonight')
     end,
-    commit = '8223c970677e4d88c9b6b6d81bda23daf11062bb',
+    commit = '6ffb1579d02b77d7284732a67801b3f388e3b9e5',
     disable = config.theme ~= 'tokyonight',
   })
 
@@ -132,7 +140,7 @@ function M.init(use, config)
         'floaterm',
         'gitsigns',
         'lsp',
-        'lsp-installer',
+        'mason',
         'notify',
         'packer',
         'telescope',
@@ -158,11 +166,11 @@ function M.init(use, config)
 
   use({
     'projekt0n/github-nvim-theme',
-    as = 'github',
+    as = 'github-theme',
     config = function()
       require('github-theme').setup()
     end,
-    commit = '1cc4a8d508bc6b846c72b9e629e8188ac24d0f13',
+    commit = 'a0632f9fa9b696896d4b427de0c84c1e9f192204',
     disable = config.theme ~= 'github',
   })
 

@@ -6,7 +6,7 @@ if not ok then
 end
 
 local default_config = {
-  border = 'rounded',
+  border = 'single',
   disable_builtin_plugins = {},
   add_plugins = {},
   theme = 'tokyonight',

@@ -79,7 +79,7 @@ end
 local PercentProvider = function()
   local line_column = fileinfo.current_line_percent()
   line_column = line_column:gsub('%s+', '')
-  return line_column .. ' ☰'
+  return line_column .. ' '
 end
 
 local BracketProvider = function(icon, cond)
@@ -125,7 +125,7 @@ galaxy.short_line_list = {
 gls.left = {
   {
     GhostLeftBracket = {
-      provider = BracketProvider(icons.rounded_left_filled, true),
+      provider = BracketProvider(icons.block_left_filled, true),
       highlight = 'GalaxyViModeNestedInv',
     },
   },
@@ -137,7 +137,7 @@ gls.left = {
   },
   {
     ViModeLeftBracket = {
-      provider = BracketProvider(icons.rounded_right_filled, true),
+      provider = BracketProvider(icons.block_right_filled, true),
       highlight = 'GalaxyViMode',
     },
   },
@@ -430,7 +430,7 @@ gls.right = {
   },
   {
     PercentRightBracket = {
-      provider = BracketProvider(icons.rounded_right_filled, true),
+      provider = BracketProvider(icons.block_right_filled, true),
       highlight = 'GalaxyPercentBracket',
     },
   },
@@ -439,20 +439,20 @@ gls.right = {
 gls.short_line_left = {
   {
     GhostLeftBracketShort = {
-      provider = BracketProvider(icons.rounded_left_filled, true),
-      highlight = { colors.white, 'StatusLine' },
+      provider = BracketProvider(icons.block_left_filled, true),
+      highlight = 'GalaxyViModeNestedInv',
     },
   },
   {
     GhostShort = {
       provider = BracketProvider(main_icon, true),
-      highlight = { 'StatusLine', colors.white },
+      highlight = 'GalaxyViModeInv',
     },
   },
   {
     GhostRightBracketShort = {
-      provider = BracketProvider(icons.rounded_right_filled, true),
-      highlight = { colors.white, 'StatusLine' },
+      provider = BracketProvider(icons.block_right_filled, true),
+      highlight = 'GalaxyViModeNestedInv',
     },
   },
   {
@@ -468,7 +468,7 @@ gls.short_line_left = {
       end,
       highlight = {
         require('galaxyline.providers.fileinfo').get_file_icon,
-        'StatusLine',
+        'GalaxyViModeInv',
       },
     },
   },
@@ -497,7 +497,7 @@ gls.short_line_right = {
     GitRootShortLeftBracket = {
       provider = BracketProvider(icons.arrow_left_filled, true),
       condition = condition.buffer_not_empty,
-      highlight = { colors.white, 'StatusLine' },
+      highlight = 'GalaxyViModeNestedInv',
     },
   },
   {
@@ -505,14 +505,14 @@ gls.short_line_right = {
       provider = get_git_root,
       condition = condition.buffer_not_empty,
       icon = '  ' .. icons.file .. ' ',
-      highlight = { statusline_colors.guibg, colors.white },
+      highlight = 'GalaxyViModeInv',
     },
   },
   {
     GitRootShortRightBracket = {
-      provider = BracketProvider(icons.rounded_right_filled, true),
+      provider = BracketProvider(icons.block_right_filled, true),
       condition = condition.buffer_not_empty,
-      highlight = { colors.white, 'StatusLine' },
+      highlight = 'GalaxyViModeNestedInv',
     },
   },
 }

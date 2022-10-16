@@ -31,7 +31,7 @@ function M.init(client, bufnr)
   set_keymap('v', '<leader>ga', '<cmd>lua require("cosmic-ui").range_code_actions()<cr>')
 
   -- formatting
-  set_keymap('n', '<leader>gf', '<cmd>lua vim.lsp.buf.formatting()<cr>')
+  set_keymap('n', '<leader>gf', '<cmd>lua vim.lsp.buf.format()<cr>')
   set_keymap('v', '<leader>gf', '<cmd>lua vim.lsp.buf.range_formatting()<cr>')
 
   -- signature help

@@ -68,6 +68,7 @@ return packer.startup(function()
     event = 'BufWinEnter',
   })
 
+  -- Lsp
   use({
     'neovim/nvim-lspconfig',
     config = function()
@@ -75,8 +76,26 @@ return packer.startup(function()
     end,
     requires = {
       { 'b0o/SchemaStore.nvim' },
-      { 'williamboman/nvim-lsp-installer' },
       { 'jose-elias-alvarez/nvim-lsp-ts-utils' },
+      {
+        'williamboman/mason.nvim',
+        config = {
+          ui = {
+            border = user_config.border,
+            keymaps = {
+              -- Keymap to expand a server in the UI
+              toggle_server_expand = 'i',
+              -- Keymap to install a server
+              install_server = '<CR>',
+              -- Keymap to reinstall/update a server
+              update_server = 'u',
+              -- Keymap to uninstall a server
+              uninstall_server = 'x',
+            },
+          },
+        },
+      },
+      { 'williamboman/mason-lspconfig.nvim' },
       {
         'jose-elias-alvarez/null-ls.nvim',
         config = function()

@@ -35,9 +35,9 @@ packer.init({
   -- snapshot = 'Cosmic',
   display = {
     open_fn = function()
-      return require('packer.util').float({ border = 'rounded' })
+      return require('packer.util').float({ border = 'single' })
     end,
-    prompt_border = 'rounded',
+    prompt_border = 'single',
   },
   git = {
     clone_timeout = 800, -- Timeout, in seconds, for git clones
